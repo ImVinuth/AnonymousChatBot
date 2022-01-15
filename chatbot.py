@@ -42,8 +42,8 @@ def welcome(message):
         bot.send_message(message.from_user.id, f"*Welcome to Join {BOT_NAME}🙊*\n\n_Hope you get a friend or a mate_\n\n*NOTE:*\nJOIN\n[👥 ɢʀᴏᴜᴘ](t.me/{GROUP}) | [ᴄʜᴀɴɴᴇʟ 📣](t.me/{CHANNEL}) | [📱ᴏᴡɴᴇʀ](t.me/{OWNER})",parse_mode="markdown",disable_web_page_preview=True, reply_markup=mark)
         bot.register_next_step_handler(message, search_prof)
     else:
-        bot.send_message(message.from_user.id, "_👋Hello New Users, To Continue Filling The Following Bio data!_",parse_mode="markdown")
-        bot.send_message(message.from_user.id, "➡️ *Your name :*", parse_mode="markdown")
+        bot.send_message(message.from_user.id, "Hello, this is a chatbot made by @Vinuth_BOTs. Continue filling in the bio data below!",parse_mode="markdown")
+        bot.send_message(message.from_user.id, "➡️ *Hi, what's your name?*", parse_mode="markdown")
         bot.register_next_step_handler(message, reg_name)
 
 @bot.message_handler(content_types=['text'])
@@ -55,7 +55,7 @@ def reg_name(message):
         user = User(message.from_user.id)
         user_dict[message.from_user.id] = user
         user.name = message.text
-        bot.send_message(message.from_user.id, "*Age :*", parse_mode="markdown")
+        bot.send_message(message.from_user.id, "*Age ??*", parse_mode="markdown")
         bot.register_next_step_handler(message, reg_age)
 
     else:
